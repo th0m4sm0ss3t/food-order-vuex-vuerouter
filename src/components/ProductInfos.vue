@@ -6,13 +6,18 @@
     </div>
     <div class="product__infos">
       <p class="price">{{ product.price }} €</p>
-      <p class="stock">In stock : {{ product.inventory }}</p>
       <p class="description">{{ product.description }}</p>
       <div class="product__btns">
-        <button class="product__btns__btn">
+        <button
+          class="product__btns__btn"
+          @click="addProductToOrder(routerSlug)"
+        >
           +
         </button>
-        <button class="product__btns__btn">
+        <button
+          class="product__btns__btn"
+          @click="removeProductFromOrder(routerSlug)"
+        >
           -
         </button>
       </div>
@@ -21,7 +26,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "Product List",
@@ -38,6 +43,9 @@ export default {
       );
     },
   },
+  methods: {
+    ...mapMutations(["addProductToOrder", "removeProductFromOrder"]),
+  }
 };
 </script>
 
@@ -96,7 +104,7 @@ export default {
   width: 100%;
 }
 
-.price, .stock, .description {
+.price, .description {
   margin: $gutter 0 $gutter $gutter;
 }
 
@@ -104,12 +112,6 @@ export default {
   font-family: $titleFont;
   font-size: $gutter * 2;
   width: 45%;
-}
-
-.stock {
-  width: 45%;
-  text-align: end;
-  text-decoration: underline;
 }
 
 /* Small screen */
@@ -143,10 +145,6 @@ export default {
   }
 
   .price {
-    width: 50%;
-  }
-
-  .stock {
     width: 50%;
   }
 }

@@ -26,29 +26,42 @@
     <!-- responsive menu navigation -->
     <div class="menu-burger-div" v-if="displayMenuState">
         <p class="title">Summary of your order</p>
-        <p class="nbOfItems">
+        <p class="nbOfItems" v-if="$store.state.orderItemsNumber < 1">
             You have {{ $store.state.orderItemsNumber }} item in your order.
         </p>
-        <ul class="allItems">
-            <li class="item">item + quantity</li>
+        <ul 
+          v-else class="allItems"
+          v-for="orderItemsArray in orderItems"
+          :key="orderItemsArray.id"
+        >
+          <li 
+            class="item"
+            v-for="item in orderItemsArray"
+            :key="item.id"
+          >
+            - {{ item.title }}
+          </li>
             <div class="btns">
-                <button class="btns__btn">
-                +
-                </button>
-                <button class="btns__btn">
-                -
+                <button 
+                  class="btns__btn"
+                  v-for="item in orderItemsArray"
+                  :key="item.id"
+                  @click="removeProductFromOrder(item.id)"
+                >
+                x
                 </button>
             </div>
         </ul>
         <p class="price">
-          Price €
+          <!-- func truncate to decimal | ex : 22.99 -->
+          {{ Math.floor($store.state.orderPrice * 100) / 100 }} €
         </p>
     </div>
 </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "Order Resume",
@@ -58,7 +71,11 @@ export default {
     }
   },
   computed: {
-    ...mapState(["products"]),
+    ...mapState(["products", "orderItems"]),
+    
+  },
+  methods: {
+    ...mapMutations(["removeProductFromOrder"]),
   }
 };
 </script>
@@ -137,6 +154,15 @@ export default {
   display: flex;
   flex-wrap: wrap;
   width: 30%;
+  max-height: 65%;
+  overflow: auto;
+}
+
+/* Small screen */
+@media only screen and (max-width: 800px) {
+  .menu-burger-div {
+    width: 70%;
+  }
 }
 
 </style>

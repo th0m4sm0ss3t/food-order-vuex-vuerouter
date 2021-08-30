@@ -16,17 +16,14 @@
         >
       </router-link>
         <div class="product__subsection">
-          <p class="product__name">
-            {{ product.title }}
-          </p>
-          <div class="product__btns">
-            <button class="product__btns__btn">
-              +
-            </button>
-            <button class="product__btns__btn">
-              -
-            </button>
-          </div>
+          <router-link 
+            :to="{ name: 'Product', params: { slug: product.slug }, }"
+            class="link"
+          >
+            <p class="product__name">
+              {{ product.title }}
+            </p>
+          </router-link>
         </div>
       </div>
   </div>
@@ -83,23 +80,15 @@ export default {
   &__name {
     font-family: $titleFont;
   }
+}
 
-  &__btns {
-    &__btn {
-      background: $yellow;
-      font-size: $gutter;
-      border-radius: 5px;
-      border: solid 2px $yellow;
-      width: $gutter * 3;
-      height: $gutter * 2;
-      margin-left: $gutter;
-      cursor: pointer;
-    }
+.link {
+  color: $black;
+  text-decoration: none;
+}
 
-    &__btn:hover {
-      border: solid 2px $red;
-    }
-  }
+.link:hover {
+  color: $red;
 }
 
 /* Small screen */

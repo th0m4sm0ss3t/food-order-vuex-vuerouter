@@ -6,7 +6,8 @@ const products = [
         "price": 2.00, 
         "inventory": 8, 
         "img": "https://cdn.pixabay.com/photo/2017/03/30/15/47/churros-2188871_960_720.jpg",
-        "slug" : "churros-x3"
+        "slug" : "churros-x3",
+        "nbOfPieceOrdered": 0,
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@ const products = [
         "price": 10.99,
         "inventory": 10,
         "img": "https://cdn.pixabay.com/photo/2016/11/18/15/03/burger-1835192_960_720.jpg",
-        "slug" : "burger"
+        "slug" : "burger",
+        "nbOfPieceOrdered": 0,
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@ const products = [
         "price": 2.99,
         "inventory": 5,
         "img": "https://cdn.pixabay.com/photo/2016/11/20/09/06/bowl-1842294_960_720.jpg",
-        "slug" : "french-fries"
+        "slug" : "french-fries",
+        "nbOfPieceOrdered": 0,
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@ const products = [
         "price": 5.99,
         "inventory": 7,
         "img": "https://cdn.pixabay.com/photo/2015/03/26/09/39/fried-chicken-690039_960_720.jpg",
-        "slug" : "fried-chicken-x5"
+        "slug" : "fried-chicken-x5",
+        "nbOfPieceOrdered": 0,
     },
     {
         "id": 5,
@@ -42,7 +46,8 @@ const products = [
         "price": 1.50,
         "inventory": 14,
         "img": "https://cdn.pixabay.com/photo/2017/04/25/08/02/coffee-beans-2258839_960_720.jpg",
-        "slug" : "coffee"
+        "slug" : "coffee",
+        "nbOfPieceOrdered": 0,
     },
     {
         "id": 6,
@@ -51,7 +56,8 @@ const products = [
         "price": 1.95,
         "inventory": 1,
         "img": "https://cdn.pixabay.com/photo/2019/08/13/20/02/coca-cola-4404130_960_720.jpg",
-        "slug" : "soda"
+        "slug" : "soda",
+        "nbOfPieceOrdered": 0,
     },
     {
         "id": 7,
@@ -60,7 +66,8 @@ const products = [
         "price": 4.70,
         "inventory": 9,
         "img": "https://cdn.pixabay.com/photo/2016/03/09/15/22/food-1246621_960_720.jpg",
-        "slug" : "salad"
+        "slug" : "salad",
+        "nbOfPieceOrdered": 0,
     },
 ];
 
