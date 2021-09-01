@@ -8,7 +8,7 @@
       <p class="price">{{ product.price }} €</p>
       <p class="description">{{ product.description }}</p>
       <div class="product__btns">
-        <button
+        <!--<button
           class="product__btns__btn"
           @click="addProductToOrder(routerSlug)"
         >
@@ -17,6 +17,18 @@
         <button
           class="product__btns__btn"
           @click="removeProductFromOrder(routerSlug)"
+        >
+          -
+        </button>-->
+        <button
+          class="product__btns__btn"
+          @click="addProductToOrderViaDataOrder(routerSlug)"
+        >
+          +
+        </button>
+        <button
+          class="product__btns__btn"
+          @click="removeProductToOrderViaDataOrder(routerSlug)"
         >
           -
         </button>
@@ -44,7 +56,7 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["addProductToOrder", "removeProductFromOrder"]),
+    ...mapMutations(["addProductToOrderViaDataOrder", "removeProductToOrderViaDataOrder"]),
   }
 };
 </script>

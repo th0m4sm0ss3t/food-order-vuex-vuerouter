@@ -29,32 +29,37 @@
         <p class="nbOfItems" v-if="$store.state.orderItemsNumber < 1">
             You have {{ $store.state.orderItemsNumber }} item in your order.
         </p>
-        <ul 
-          v-else class="allItems"
-          v-for="orderItemsArray in orderItems"
-          :key="orderItemsArray.id"
-        >
-          <li 
-            class="item"
-            v-for="item in orderItemsArray"
-            :key="item.id"
-          >
-            - {{ item.title }}
-          </li>
-            <div class="btns">
+
+        <div v-else class="allItemsWrapper">
+          <ul class="allItems">
+            <li
+              class="item" 
+              v-for="item in dataOrder"
+              :key="item.id"
+            >
+              <span 
+                class="item__infos" 
+                v-if="item.nbOfPieceOrdered != 0"
+              >
+                <span>
+                  - {{ item.title }}
+                  <span class="nbOfItems__span">
+                    {{ item.nbOfPieceOrdered }}
+                  </span>
+                </span>
                 <button 
                   class="btns__btn"
-                  v-for="item in orderItemsArray"
-                  :key="item.id"
-                  @click="removeProductFromOrder(item.id)"
+                  @click="removeProductFromOrderThroughMenu(item)"
                 >
                 x
                 </button>
-            </div>
-        </ul>
+              </span>
+            </li>
+          </ul>
+        </div>
+
         <p class="price">
-          <!-- func truncate to decimal | ex : 22.99 -->
-          {{ Math.floor($store.state.orderPrice * 100) / 100 }} €
+          {{$store.state.orderPrice }} €
         </p>
     </div>
 </div>
@@ -71,11 +76,11 @@ export default {
     }
   },
   computed: {
-    ...mapState(["products", "orderItems"]),
+    ...mapState(["products", "orderItems", "dataOrder"]),
     
   },
   methods: {
-    ...mapMutations(["removeProductFromOrder"]),
+    ...mapMutations(["removeProductFromOrderThroughMenu"]),
   }
 };
 </script>
@@ -96,7 +101,7 @@ export default {
 }
 
 .openBtn {
-    background: $yellow;
+  background: $yellow;
 }
 
 .title {
@@ -107,24 +112,37 @@ export default {
   margin-bottom: $gutter * 3;
 }
 
-.nbOfItems, .price {
-  width: 100%; 
-  text-align: center; 
-  margin-bottom: $gutter; 
+.allItemsWrapper {
+  width: 100%;
+}
+
+.item {
+  margin: $gutter / 2 0;
+
+  &__infos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.nbOfItems__span {
+  background: $red;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.3rem ;
+  color: $gray;
+  border-radius: 5px;
+  border: solid 1px $red;
 }
 
 .price {
+  width: 100%; 
+  text-align: center; 
+  margin-bottom: $gutter; 
   margin-top: $gutter * 2; 
   font-family: $titleFont;
   font-size: 1.8rem;
-}
-
-.allItems {
-  margin-top: $gutter;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .btns {
