@@ -10,7 +10,6 @@ export default createStore({
       orderItemsNumber: 0,
       orderItems: [],
       orderPrice: 0,
-
       dataOrder: dataOrder,
     }
   },
@@ -51,7 +50,7 @@ export default createStore({
 
       if (product[0].id == productInsideOrder.id) {
 
-        // Add nb of pieces wanted of the object
+        // Update nb of pieces wanted of the object
         productInsideOrder.nbOfPieceOrdered = productInsideOrder.nbOfPieceOrdered - 1;
 
         if(state.orderPrice > 0){
@@ -62,6 +61,27 @@ export default createStore({
         }
       }
     },
+
+    removeProductFromOrderThroughMenu(state, productId) {
+      // for increasing the nb of items of the order
+      state.orderItemsNumber = state.orderItemsNumber - 1;
+
+      // Get the compatible product inside the OrderItems array
+      let productInsideOrder = state.dataOrder[productId - 1];
+
+      if (productId == productInsideOrder.id) {
+
+        // Update nb of pieces wanted of the object
+        productInsideOrder.nbOfPieceOrdered = productInsideOrder.nbOfPieceOrdered - 1;
+
+        if(state.orderPrice > 0){
+          // Update de total price for the order
+          state.orderPrice = state.orderPrice - productInsideOrder.price;
+
+          console.log(state.orderPrice, "€", productInsideOrder.nbOfPieceOrdered);
+        }
+      }
+    }
 
   },
   actions: {},

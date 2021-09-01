@@ -49,7 +49,7 @@
                 </span>
                 <button 
                   class="btns__btn"
-                  @click="removeProductFromOrderThroughMenu(item)"
+                  @click="removeProductFromOrderThroughMenu(item.id)"
                 >
                 x
                 </button>
@@ -110,6 +110,11 @@ export default {
   font-size: $titleSize;
   width: 100%;
   margin-bottom: $gutter * 3;
+}
+
+.nbOfItems {
+  width: 100%;
+  text-align: center;
 }
 
 .allItemsWrapper {
