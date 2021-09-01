@@ -63,6 +63,33 @@ const products = [
         "slug" : "salad",
         "nbOfPieceOrdered": 0,
     },
+    {
+        "id": 8,
+        "title": "Sandwich",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab sunt modi eaque omnis quae, aperiam blanditiis veritatis! Numquam eligendi accusantium quidem voluptate modi asperiores eveniet at ipsa delectus soluta, corrupti",
+        "price": 5.50,
+        "img": "https://images.pexels.com/photos/4193876/pexels-photo-4193876.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        "slug" : "sandwich",
+        "nbOfPieceOrdered": 0,
+    },
+    {
+        "id": 9,
+        "title": "Carrot Fries",
+        "description": "Flathead pipefish brook lamprey four-eyed fish beluga sturgeon Sevan trout tailor spiny eel. Northern squawfish ghost pipefish lionfish blackchin; pirate perch, flagfish blacktip reef shark northern anchovy? Old World rivuline. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab sunt modi eaque omnis quae, aperiam blanditiis veritatis! Numquam eligendi accusantium quidem voluptate modi asperiores eveniet at ipsa delectus soluta, corrupti",
+        "price": 3.00,
+        "img": "https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        "slug" : "carrot-fries",
+        "nbOfPieceOrdered": 0,
+    },
+    {
+        "id": 10,
+        "title": "Hot Dog",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab sunt modi eaque omnis quae, aperiam blanditiis veritatis! Provident ab sunt modi eaque omnis quae, aperiam blanditiis.",
+        "price": 2.50,
+        "img": "https://images.pexels.com/photos/3023479/pexels-photo-3023479.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        "slug" : "hot-dog",
+        "nbOfPieceOrdered": 0,
+    },
 ];
 
 export default products;

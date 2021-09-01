@@ -31,16 +31,17 @@ export default createStore({
 
         // Update de total price for the order
         state.orderPrice = state.orderPrice + productInsideOrder.price;
-
-        console.log(state.orderPrice, "€", productInsideOrder.nbOfPieceOrdered);
       }
 
       // console.log(product[0].id, productInsideOrder.id);
     },
 
     removeProductToOrderViaDataOrder(state, routerSlug) {
-      // for increasing the nb of items of the order
-      state.orderItemsNumber = state.orderItemsNumber - 1;
+
+      if (state.orderItemsNumber > 0) {
+        // for increasing the nb of items of the order
+        state.orderItemsNumber = state.orderItemsNumber - 1;
+      }
 
       // Get the added product by its slug
       let product = state.products.filter(product => product.slug === routerSlug)
@@ -56,15 +57,16 @@ export default createStore({
         if(state.orderPrice > 0){
           // Update de total price for the order
           state.orderPrice = state.orderPrice - productInsideOrder.price;
-
-          console.log(state.orderPrice, "€", productInsideOrder.nbOfPieceOrdered);
         }
       }
     },
 
     removeProductFromOrderThroughMenu(state, productId) {
-      // for increasing the nb of items of the order
-      state.orderItemsNumber = state.orderItemsNumber - 1;
+      
+      if (state.orderItemsNumber > 0) {
+        // for increasing the nb of items of the order
+        state.orderItemsNumber = state.orderItemsNumber - 1;
+      }
 
       // Get the compatible product inside the OrderItems array
       let productInsideOrder = state.dataOrder[productId - 1];
