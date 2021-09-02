@@ -2,12 +2,14 @@ const products = [
     {
         "id": 1, 
         "title": "Churros (x3)", 
-        "description": "Cupcake ipsum dolor sit amet oat cake. Cheesecake pudding cotton candy toffee lemon drops cake croissant gummi bears tart. Pastry cupcake tiramisu cotton candy caramels lemon drops sweet ice cream. Lollipop danish gummi bears gingerbread marshmallow ice cream gummi bears macaroon jelly beans. Macaroon dessert cake marshmallow liquorice sesame snaps lollipop jelly beans. Chupa chups cotton candy cake pie croissant. Wafer sesame snaps bonbon cake bonbon. Marzipan brownie marzipan pudding pudding halvah candy wafer carrot cake.", 
+        "description": "Cupcake ipsum dolor sit amet oat cake. Cheesecake pudding cotton candy toffee lemon drops cake croissant gummi bears tart. Pastry cupcake tiramisu cotton candy caramels lemon drops sweet ice cream. Lollipop danish gummi bears gingerbread marshmallow ice cream gummi bears macaroon jelly beans. Macaroon Dessert cake marshmallow liquorice sesame snaps lollipop jelly beans. Chupa chups cotton candy cake pie croissant. Wafer sesame snaps bonbon cake bonbon. Marzipan brownie marzipan pudding pudding halvah candy wafer carrot cake.", 
         "price": 2.00, 
         "inventory": 8, 
         "img": "https://cdn.pixabay.com/photo/2017/03/30/15/47/churros-2188871_960_720.jpg",
         "slug" : "churros-x3",
         "nbOfPieceOrdered": 0,
+        "type": "Dessert",
+        "typeSlug" : "dessert"
     },
     {
         "id": 2,
@@ -17,6 +19,8 @@ const products = [
         "img": "https://cdn.pixabay.com/photo/2016/11/18/15/03/burger-1835192_960_720.jpg",
         "slug" : "burger",
         "nbOfPieceOrdered": 0,
+        "type": "Main meal",
+        "typeSlug" : "main-meal"
     },
     {
         "id": 3,
@@ -26,6 +30,8 @@ const products = [
         "img": "https://cdn.pixabay.com/photo/2016/11/20/09/06/bowl-1842294_960_720.jpg",
         "slug" : "french-fries",
         "nbOfPieceOrdered": 0,
+        "type": "Side meal",
+        "typeSlug" : "side-meal"
     },
     {
         "id": 4,
@@ -35,6 +41,8 @@ const products = [
         "img": "https://cdn.pixabay.com/photo/2015/03/26/09/39/fried-chicken-690039_960_720.jpg",
         "slug" : "fried-chicken-x5",
         "nbOfPieceOrdered": 0,
+        "type": "Main meal",
+        "typeSlug" : "main-meal"
     },
     {
         "id": 5,
@@ -44,6 +52,8 @@ const products = [
         "img": "https://cdn.pixabay.com/photo/2017/04/25/08/02/coffee-beans-2258839_960_720.jpg",
         "slug" : "coffee",
         "nbOfPieceOrdered": 0,
+        "type": "Drink",
+        "typeSlug" : "drink"
     },
     {
         "id": 6,
@@ -53,6 +63,8 @@ const products = [
         "img": "https://cdn.pixabay.com/photo/2019/08/13/20/02/coca-cola-4404130_960_720.jpg",
         "slug" : "soda",
         "nbOfPieceOrdered": 0,
+        "type": "Drink",
+        "typeSlug" : "drink"
     },
     {
         "id": 7,
@@ -62,6 +74,8 @@ const products = [
         "img": "https://cdn.pixabay.com/photo/2016/03/09/15/22/food-1246621_960_720.jpg",
         "slug" : "salad",
         "nbOfPieceOrdered": 0,
+        "type": "Main meal",
+        "typeSlug" : "main-meal"
     },
     {
         "id": 8,
@@ -71,6 +85,8 @@ const products = [
         "img": "https://images.pexels.com/photos/4193876/pexels-photo-4193876.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
         "slug" : "sandwich",
         "nbOfPieceOrdered": 0,
+        "type": "Main meal",
+        "typeSlug" : "main-meal"
     },
     {
         "id": 9,
@@ -80,6 +96,8 @@ const products = [
         "img": "https://images.pexels.com/photos/1893555/pexels-photo-1893555.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
         "slug" : "carrot-fries",
         "nbOfPieceOrdered": 0,
+        "type": "Side meal",
+        "typeSlug" : "side-meal"
     },
     {
         "id": 10,
@@ -89,6 +107,30 @@ const products = [
         "img": "https://images.pexels.com/photos/3023479/pexels-photo-3023479.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
         "slug" : "hot-dog",
         "nbOfPieceOrdered": 0,
+        "type": "Main meal",
+        "typeSlug" : "main-meal"
+    },
+    {
+        "id": 11,
+        "title": "Chocolate Muffin",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit.  Sevan trout tailor spiny eel. Northern squawfish ghost pipefish lionfish blackchin; pirate perch, flagfish blacktip reef shark northern anchovy? Old World rivuline. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab sunt modProvident ab sunt modi eaque omnis quae, aperiam blanditiis veritatis! Provident ab sunt modi eaque omnis quae, aperiam blanditiis.",
+        "price": 2.00,
+        "img": "https://images.pexels.com/photos/3650438/pexels-photo-3650438.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        "slug" : "chocolate-muffin",
+        "nbOfPieceOrdered": 0,
+        "type": "Dessert",
+        "typeSlug" : "dessert"
+    },
+    {
+        "id": 12,
+        "title": "Vanilla Ice Cream (Cone)",
+        "description": "r batfish sind danio? Stonefish African glass catfish chub ruffe piranha; weatherfish yellow bass deep sea anglerfish, gulf menhaden. Flathead pipefish brook lamprey four-eyed fish beluga sturgeon Sevan trout tailor spiny eel. Northern squawfish ghost pipefish lionfish blackchin; pirate perch, Provident ab sunt modProvident ab sunt modi eaque omnis quae, aperiam blanditiis veritatis! Provident ab sunt modi eaque omnis quae, aperiam blanditiis.",
+        "price": 1.50,
+        "img": "https://images.pexels.com/photos/1294943/pexels-photo-1294943.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+        "slug" : "ice-cream-cone",
+        "nbOfPieceOrdered": 0,
+        "type": "Dessert",
+        "typeSlug" : "dessert"
     },
 ];
 

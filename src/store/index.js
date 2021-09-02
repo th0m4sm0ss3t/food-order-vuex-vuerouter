@@ -11,6 +11,33 @@ export default createStore({
       orderItems: [],
       orderPrice: 0,
       dataOrder: dataOrder,
+      productsTypes: [
+        {
+          id : 0,
+          name : "All",
+          slug : "all"
+        },
+        {
+          id : 1,
+          name : "Dessert",
+          slug : "dessert"
+        },
+        {
+          id : 2,
+          name : "Drink",
+          slug : "drink"
+        },
+        {
+          id : 3,
+          name : "Main meal",
+          slug : "main-meal"
+        },
+        {
+          id : 4,
+          name : "Side meal",
+          slug : "side-meal"
+        },
+      ]
     }
   },
   mutations: {
@@ -33,7 +60,7 @@ export default createStore({
         state.orderPrice = state.orderPrice + productInsideOrder.price;
       }
 
-      // console.log(product[0].id, productInsideOrder.id);
+      //console.log(product[0].id, productInsideOrder.id);
     },
 
     removeProductToOrderViaDataOrder(state, routerSlug) {
@@ -83,14 +110,33 @@ export default createStore({
           console.log(state.orderPrice, "€", productInsideOrder.nbOfPieceOrdered);
         }
       }
-    }
-
+    },
   },
   actions: {},
   getters: {
-    availableProducts (state) {
-      return state.products.filter(product => product.inventory > 0);
+    filterProductsGetters : (state) => (filter) => {
+      if (filter === "all") {
+        return state.products;
+
+      } else { // filter by slug
+        
+        return state.products.filter(product => product.typeSlug === filter);
+      }
+
     },
+    
+    dessertTypedProducts (state) {
+      return state.products.filter(product => product.typeSlug === "dessert");
+    },
+    drinkTypedProducts (state) {
+      return state.products.filter(product => product.typeSlug === "drink");
+    },
+    mainMealTypedProducts (state) {
+      return state.products.filter(product => product.typeSlug === "main-meal");
+    },
+    sideMealTypedProducts (state) {
+      return state.products.filter(product => product.typeSlug === "side-meal");
+    }
   },
   modules: {},
 });

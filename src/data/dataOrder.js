@@ -59,6 +59,18 @@ const orderItems = [
         "price": 2.50,
         "nbOfPieceOrdered": 0,
     },
+    {
+        "id": 11,
+        "title": "Chocolate Muffin",
+        "price": 2.00,
+        "nbOfPieceOrdered": 0,
+    },
+    {
+        "id": 12,
+        "title": "Vanilla Ice Cream (Cone)",
+        "price": 1.50,
+        "nbOfPieceOrdered": 0,
+    },
 ]
 
 export default orderItems;

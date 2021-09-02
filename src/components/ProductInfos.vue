@@ -8,21 +8,11 @@
       <p class="price">{{ product.price }} €</p>
       <p class="description">{{ product.description }}</p>
       <div class="product__btns">
-        <!--<button
-          class="product__btns__btn"
-          @click="addProductToOrder(routerSlug)"
-        >
-          +
-        </button>
-        <button
-          class="product__btns__btn"
-          @click="removeProductFromOrder(routerSlug)"
-        >
-          -
-        </button>-->
         <button
           class="product__btns__btn"
           @click="addProductToOrderViaDataOrder(routerSlug)"
+
+          @submit="submitFlavor"
         >
           +
         </button>

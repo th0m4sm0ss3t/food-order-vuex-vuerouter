@@ -1,26 +1,11 @@
 <template>
   <div class="products">
-    <h1 class="title">Our products</h1>
+    <h1 class="title">Our {{ routerFilter }}</h1>
 
   <!-- TODO Filterig menu + SCSS -->
-    <div class="filterProduct">
-        <p 
-          v-for="type in productsTypes"
-          :key="type.id"
-          class="filterProduct__title"
-        >
-          <router-link
-            :to="{ name: 'FilteredProduct', params: { filter: type.slug  }, }"
-
-            @click="filterProductsGetters(type.slug)"
-          >
-            {{ type.name }}
-          </router-link>
-        </p>
-    </div>
 
     <div 
-      v-for="product in products"
+      v-for="product in filteredProducts" 
       :key="product.id"
       class="product"
     >
@@ -48,14 +33,22 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
-  name: "Product List",
+  name: "Filtered Products List",
+  data () {
+    return {
+      routerFilter: this.$route.params.filter,
+    }
+  },
   computed: {
     ...mapState(["products", "productsTypes"]),
-    ...mapGetters(["filterProductsGetters"]),
-  }
+
+    filteredProducts(){
+    	return this.$store.getters.filterProductsGetters(this.routerFilter)
+    }
+  },
 };
 </script>
 
