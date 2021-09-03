@@ -124,19 +124,6 @@ export default createStore({
       }
 
     },
-    
-    dessertTypedProducts (state) {
-      return state.products.filter(product => product.typeSlug === "dessert");
-    },
-    drinkTypedProducts (state) {
-      return state.products.filter(product => product.typeSlug === "drink");
-    },
-    mainMealTypedProducts (state) {
-      return state.products.filter(product => product.typeSlug === "main-meal");
-    },
-    sideMealTypedProducts (state) {
-      return state.products.filter(product => product.typeSlug === "side-meal");
-    }
   },
   modules: {},
 });

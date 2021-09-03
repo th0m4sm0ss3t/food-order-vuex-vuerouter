@@ -1,9 +1,14 @@
 <template>
   <div class="products">
-    <h1 class="title">Our {{ routerFilter }}</h1>
-
-  <!-- TODO Filterig menu + SCSS -->
-
+    <h1 
+      class="title"
+      v-if="routerFilter === 'all'"
+    >Our products</h1>
+    <h1 
+      class="title"
+      v-else
+    >Our {{ filteredProducts[0].type.toLowerCase() }}s</h1>
+    <FilteringMenu />
     <div 
       v-for="product in filteredProducts" 
       :key="product.id"
@@ -34,9 +39,13 @@
 
 <script>
 import { mapState } from "vuex";
+import FilteringMenu from "./FilteringMenu.vue";
 
 export default {
   name: "Filtered Products List",
+  components: {
+    FilteringMenu,
+  },
   data () {
     return {
       routerFilter: this.$route.params.filter,
@@ -44,10 +53,9 @@ export default {
   },
   computed: {
     ...mapState(["products", "productsTypes"]),
-
     filteredProducts(){
     	return this.$store.getters.filterProductsGetters(this.routerFilter)
-    }
+    },
   },
 };
 </script>
