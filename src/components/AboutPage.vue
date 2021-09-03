@@ -70,6 +70,9 @@
 <script>
 export default {
   name: "AboutPage",
+  created () {
+    document.title = "About";
+  },
   data () {
     return {
         openings: [

@@ -43,6 +43,13 @@ import FilteringMenu from "./FilteringMenu.vue";
 
 export default {
   name: "Filtered Products List",
+  created () {
+    if (this.routerFilter === 'all') {
+      document.title = "All products";
+    } else {
+      document.title = this.filteredProducts[0].type + "s";
+    }
+  },
   components: {
     FilteringMenu,
   },

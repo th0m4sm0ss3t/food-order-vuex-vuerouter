@@ -36,6 +36,9 @@ import FilteringMenu from "./FilteringMenu.vue";
 
 export default {
   name: "Product List",
+  created () {
+    document.title = "Product list";
+  },
   components: {
     FilteringMenu,
   },

@@ -23,6 +23,10 @@
 <script>
 export default {
   name: "Homepage",
+  /* for meta info */
+  created () {
+    document.title = "Homepage";
+  }
 };
 </script>
 

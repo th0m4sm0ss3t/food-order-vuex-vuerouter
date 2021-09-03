@@ -32,6 +32,9 @@ import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "Product List",
+  created () {
+    document.title = this.product.title;
+  },
   data () {
     return {
       routerSlug: this.$route.params.slug,

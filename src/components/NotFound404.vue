@@ -30,6 +30,9 @@
 <script>
 export default {
   name: "NotFound404",
+  created () {
+    document.title = "404 - Not found";
+  }
 };
 </script>
 
