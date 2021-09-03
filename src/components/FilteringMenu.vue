@@ -6,14 +6,12 @@
           class="filterProduct__title"
       >
           <router-link
-          :to="{ name: 'FilteredProduct', params: { filter: type.slug  }, }"
-
-          :key="$route.path"
-
-          class="filterProduct__link"
-          @click="filterProductsGetters(type.slug)"
+            :to="{ name: 'FilteredProduct', params: { filter: type.slug  }, }"
+            :key="$route.path"
+            class="filterProduct__link"
+            @click="filterProductsGetters(type.slug)"
           >
-          {{ type.name }}
+            {{ type.name }}
           </router-link>
       </p>
   </div>
@@ -31,14 +29,6 @@ export default {
     	return this.$store.getters.filterProductsGetters(this.routerFilter)
     }
   },
-  created() {
-    /*this.$watch(
-      () => this.$route.params,
-      (toParams, previousParams) => {
-        // react to route changes...
-      }
-    )*/
-  }
 }
 </script>
 

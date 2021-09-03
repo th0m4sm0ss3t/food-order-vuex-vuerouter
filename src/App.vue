@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <div class="header">
+    <header class="header">
       <router-link to="/">
         <img class="logo" src="@/assets/img/logo.jpg" alt="logo d'un burger">
       </router-link>
@@ -9,8 +9,11 @@
         <router-link to="/products" class="router-link">Products</router-link>
         <router-link to="/about" class="router-link">About</router-link>
       </div>
-    </div>
-    <router-view />
+    </header>
+    <router-view :key="$route.fullPath" />
+    <footer class="footer">
+      <p>Done by <a href="http://www.thomasmosset.fr/" target="_blank">Thomas M.</a> using Vue Router & Vuex</p>
+    </footer>
   </div>
 </template>
 
@@ -56,6 +59,23 @@
   width: $gutter * 5;
   border-radius: 5px;
   border: solid 2px $black;
+}
+
+.footer {
+  background: $red;
+  padding: $gutter 0;
+  border-top: solid 2px $black;
+  text-align: center;
+  font-weight: 600;
+}
+
+.footer a {
+  color: $gray;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .router-link {
