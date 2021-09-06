@@ -10,3 +10,7 @@ It allowed me to learn Vuex.
 - Remove quantity for a specific product inside the order resume component.
 - The order resume component lists all the added products.
 - The order resume component shows and update the price based on the added products.
+
+## Check out the demo
+
+https://order-menu.herokuapp.com/
