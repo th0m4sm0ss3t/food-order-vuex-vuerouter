@@ -156,6 +156,28 @@ export default {
 
 /* Medium screen */
 @media only screen and (min-width: 801px) {
+  .product {
+    margin: 5rem 0;
+    &__titleAndImg {
+      width: 45%;
+    }
+
+    &__infos {
+      width: 30%;
+    }
+
+    &__btns {
+      margin: 0 auto $gutter;
+
+      &__btn {
+       font-size: $gutter * 1.5;
+        width: $gutter * 4;
+        height: $gutter * 3;
+        margin: 0 $gutter;
+      }
+
+    }
+  }
 }
 
 /* Big screen */
